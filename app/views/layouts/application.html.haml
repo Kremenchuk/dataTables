@@ -1,0 +1,18 @@
+!!!
+%html
+  %head
+    %title Action
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    - if current_user
+      = current_user.email
+      %p
+        =link_to "Выход", destroy_user_session_path, :method => :delete
+    - else
+      .about_href
+        = link_to "Войти", new_user_session_path
+        %p
+          = link_to "Регистрация", new_user_registration_path
+    = yield

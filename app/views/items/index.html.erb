@@ -1,0 +1,23 @@
+<h1>Items</h1>
+<table id="items" class="display">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Catalog</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @items %>
+  </tbody>
+</table>
+
+
+<form>
+  <label>Add new item</label>
+  <br/>
+  <input class="new_item_field" id="item_name" type="text"></input>
+  <p></p>
+  <input class="new_item_field" id="item_catalog" type="text"></input>
+  <p></p>
+  <input id="item_save" type="button" value="Create new item"></input>
+</form>
